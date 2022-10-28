@@ -20,7 +20,7 @@ public class DataAccess {
     public int findUserMarks(String user) {
         Query q = entityManager.createNativeQuery("Select marks from user where name='"+user+"' for update");
         //Query q = entityManager.createQuery("select u.marks from User u where u.name=?1");
-        q.setParameter(1, user);
+        //q.setParameter(1, user);
         //q.setLockMode(LockModeType.PESSIMISTIC_WRITE);
         System.out.println("Printing");
         int marks = (int) q.getSingleResult();
